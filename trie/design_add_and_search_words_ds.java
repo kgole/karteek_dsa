@@ -32,8 +32,6 @@ class WordDictionary {
         for (int i = 0; i < word.length(); ++i) {
             char ch = word.charAt(i);
             if (!node.children.containsKey(ch)) {
-                // If the current character is '.'
-                // check all possible nodes at this level
                 if (ch == '.') {
                     for (char x : node.children.keySet()) {
                         TrieNode child = node.children.get(x);
@@ -42,12 +40,8 @@ class WordDictionary {
                         }
                     }
                 }
-                // If no nodes lead to answer
-                // or the current character != '.'
                 return false;
             } else {
-                // If the character is found
-                // go down to the next level in trie
                 node = node.children.get(ch);
             }
         }
