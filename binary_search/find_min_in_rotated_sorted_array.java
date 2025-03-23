@@ -17,6 +17,8 @@ class Solution {
         }
 
         return nums[left];
+
+        // 4 5 6 0 1 2 3
         
     }
 }
